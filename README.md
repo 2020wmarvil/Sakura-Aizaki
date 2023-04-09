@@ -32,7 +32,7 @@ python anime_gui.py
 ## 🤖 Technologies
 
 OpenAI's GPT-3 engine </br>
-Google Translate </br>
+DeepL Translator </br>
 VoiceVox </br>
 PyQt5
 
