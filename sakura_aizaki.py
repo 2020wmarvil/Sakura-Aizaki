@@ -11,9 +11,29 @@ import simpleaudio as sa
 openai.api_key = "YOUR_OPENAI_API_KEY"
 
 class SakuraAizaki:
-    def __init__(self):
+    def __init__(self, speaker_id=1, speed=1.0, pitch=0.0, intonation=1.0, volume=0.0):
         self.translator = Translator()
         self.voicevox_api_url = "http://127.0.0.1:50021"
+        self.speaker_id = speaker_id
+        self.speed = speed
+        self.pitch = pitch
+        self.intonation = intonation
+        self.volume = volume
+
+    def set_speaker_id(self, speaker_id):
+        self.speaker_id = speaker_id
+
+    def set_speed(self, speed):
+        self.speed = speed
+
+    def set_pitch(self, pitch):
+        self.pitch = pitch
+
+    def set_intonation(self, intonation):
+        self.intonation = intonation
+
+    def set_volume(self, volume):
+        self.volume = volume
 
     def record_voice(self, seconds=5):
         FORMAT = pyaudio.paInt16
@@ -75,7 +95,14 @@ class SakuraAizaki:
     def text_to_speech(self, text):
         response = requests.post(
             f"{self.voicevox_api_url}/audio_query",
-            json={"text": text, "speaker": 1}
+            json={
+                "text": text,
+                "speaker": self.speaker_id,
+                "speed": self.speed,
+                "pitch": self.pitch,
+                "intonation": self.intonation,
+                "volume": self.volume
+            }
         )
         audio_query = response.json()
         response = requests.post(
