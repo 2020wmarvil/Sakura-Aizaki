@@ -22,6 +22,9 @@ class AnimeGUI(QWidget):
         self.label_image.setPixmap(pixmap)
         vbox.addWidget(self.label_image)
 
+        self.label_english_text = QLabel('', self)
+        vbox.addWidget(self.label_english_text)
+
         self.label_text = QLabel('こんにちは！私はあなたの言葉を日本語に翻訳できます。', self)
         vbox.addWidget(self.label_text)
 
@@ -79,7 +82,10 @@ class AnimeGUI(QWidget):
         chatbot_response = self.sakura.chatbot_response(transcribed_text)
         translated_response = self.sakura.translate_to_japanese(chatbot_response)
         print(f"Sakura Aizaki (Japanese text): {translated_response}")
+
+        self.label_english_text.setText(chatbot_response)
         self.label_text.setText(translated_response)
+
         audio_response = self.sakura.text_to_speech(translated_response)
         self.sakura.play_audio(audio_response)
 
@@ -87,5 +93,3 @@ class AnimeGUI(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = AnimeGUI()
-    window.show()
-    sys.exit(app.exec_())
