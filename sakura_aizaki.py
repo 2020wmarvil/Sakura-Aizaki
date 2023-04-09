@@ -3,12 +3,15 @@ import pyaudio
 import wave
 import tempfile
 import requests
-from googletrans import Translator
+from deep_translator import DeepL
 from io import BytesIO
 import simpleaudio as sa
 
 # Set your OpenAI API key here
 openai.api_key = "YOUR_OPENAI_API_KEY"
+
+# Set your DeepL API key here
+deepl_api_key = "YOUR_DEEPL_API_KEY"
 
 class SakuraAizaki:
     def __init__(self, speaker_id=1, speed=1.0, pitch=0.0, intonation=1.0, volume=0.0):
@@ -88,9 +91,10 @@ class SakuraAizaki:
 
         return response.choices[0].text.strip()
 
-    def translate_to_japanese(self, text):
-        translated_text = self.translator.translate(text, dest='ja')
-        return translated_text.text
+    def translate(self, text, dest_language='ja'):
+        translator = DeepL(api_key=deepl_api_key)
+        translated_text = translator.translate(text, target_lang=dest_language)
+        return translated_text
 
     def text_to_speech(self, text):
         response = requests.post(
