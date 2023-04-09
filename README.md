@@ -31,9 +31,9 @@ python anime_gui.py
 
 ## 🤖 Technologies
 
-OpenAI's GPT-3 engine
-Google Translate
-VoiceVox
+OpenAI's GPT-3 engine </br>
+Google Translate </br>
+VoiceVox </br>
 PyQt5
 
 ## ✍️ Authors
@@ -50,5 +50,5 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2023 @0dayReaper.
+Copyright © 2023 @0dayReaper. </br>
 This project is MIT License licensed.
