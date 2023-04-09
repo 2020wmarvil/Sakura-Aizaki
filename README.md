@@ -15,28 +15,46 @@
 ```sh
 git clone https://github.com/0dayReaper/Sakura-Aizaki.git
 cd Sakura-Aizaki
-pip install -r requirements.txt
-📝 Setup
+pip install -r requirements.txt 
+```
+
+## 📝 Setup
+
+```sh 
 Set up VoiceVox engine on your local machine (follow the instructions in the official VoiceVox repository).
 Replace the placeholder with your OpenAI API key in sakura_aizaki.py.
-🎮 Usage
-python anime_gui.py
+```
 
-🤖 Technologies
+## 🎮 Usage
+```sh 
+python anime_gui.py
+```
+
+## 🤖 Technologies
+```sh
 OpenAI's GPT-3 engine
 Google Translate
 VoiceVox
 PyQt5
+```
 
-✍️ Authors
+## ✍️ Authors
+```sh
 Github: @0dayReaper
+```
 
-🤝 Contributing
+## 🤝 Contributing
+``` sh
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+```
 
-❤️ Show your support
+## ❤️ Show your support
+```sh
 Give a ⭐️ if this project helped you!
+```
 
-📝 License
+## 📝 License
+```sh
 Copyright © 2023 @0dayReaper. <br/>
 This project is MIT License licensed.
+```
